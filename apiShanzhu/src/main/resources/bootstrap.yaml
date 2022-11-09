@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+feign:
+  client:
+    config:
+      default:
+        connectionTimeout: 10000
+        readTimeout: 10000
+spring:
+  application:
+    name: API-SHANZHU
+  mvc:
+    servlet:
+      path: /api/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.143.209.204:3306/alenfirstproject?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&nullCatalogMeansCurrent = true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: shanzhu
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.143.209.204:8848
+        namespace: d45ccafe-ae8f-4acc-bdc5-d8b5d3b9967c
+      config:
+        server-addr: 43.143.209.204:8848
+        file-extension: yaml
+        namespace: d45ccafe-ae8f-4acc-bdc5-d8b5d3b9967c
+        refresh-enabled: true
+  profiles:
+    active: dev
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations:
+    classpath: com/shanzhu/mapper/xml/*.xml

@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: dev
+  application:
+    name: UTIL-SHANZHU
+  mvc:
+    servlet:
+      path: /utils/
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.143.209.204:8848
+        namespace: d45ccafe-ae8f-4acc-bdc5-d8b5d3b9967c
+      config:
+        server-addr: 43.143.209.204:8848
+        file-extension: yml
+        namespace: d45ccafe-ae8f-4acc-bdc5-d8b5d3b9967c
+        refresh-enabled: true
